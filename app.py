@@ -12,6 +12,7 @@ app.config['JSON_AS_ASCII'] = False
 @app.route('/api/fofocas', methods=['GET'])
 def getfofocas():
 	html_doc = requests.get('https://tvefamosos.uol.com.br/')
+	time.sleep(2000)
 	soup = BeautifulSoup(html_doc.text, 'html.parser')
     
 
