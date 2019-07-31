@@ -14,7 +14,7 @@ def getfofocas():
 	html_doc = requests.get('https://tvefamosos.uol.com.br/')
 	
 	soup = BeautifulSoup(html_doc.text, 'html.parser')
-    
+    	time.sleep(1000)
 
 	##    Blocos    ##
 	destaques = soup.find('section', class_='highlights-with-photo').find('div', class_='row')
