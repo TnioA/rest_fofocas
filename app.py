@@ -14,7 +14,7 @@ def getfofocas():
 	html_doc = requests.get('https://tvefamosos.uol.com.br/')
 	
 	soup = BeautifulSoup(html_doc.text, 'html.parser')
-    	time.sleep(1000)
+    	
 
 	##    Blocos    ##
 	destaques = soup.find('section', class_='highlights-with-photo').find('div', class_='row')
@@ -33,7 +33,8 @@ def getfofocas():
 		content = content.replace('\"', '')
 
 		#tratamento-url-imagem
-		urlimg = imgdestaques['src'].replace('jpgx', 'jpg')
+		##urlimg = imgdestaques['src'].replace('jpgx', 'jpg')
+		urlimg = imgdestaques['src']
 
 		data.append({'imagem' : urlimg, 'titulo' : title.text.strip(),'conteudo' : content.strip()})
 
