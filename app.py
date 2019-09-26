@@ -34,7 +34,7 @@ def getfofocas():
 
 		#tratamento-url-imagem
 		##urlimg = imgdestaques['src'].replace('jpgx', 'jpg')
-		urlimg = imgdestaques['src']
+		urlimg = imgdestaques['data-src']
 
 		data.append({'imagem' : urlimg, 'titulo' : title.text.strip(),'conteudo' : content.strip()})
 
@@ -54,7 +54,7 @@ def getfofocas():
 			textpadroes = getcontent.find('a').find('h3').text.strip()
 
 			# tratamento imagem
-			imgitem = imgpadroes['src'].replace('jpgx', 'jpg')
+			imgitem = imgpadroes['data-src'].replace('jpgx', 'jpg')
 
 			conteudo.append({'imagem' : imgitem, 'conteudo' : textpadroes})
 
@@ -71,7 +71,7 @@ def getfofocas():
 			data_ultimas = dataBox_ultimas.find('time', class_='thumb-time')
 
 			if (hasattr(imgultimas, 'src')):
-				aux = imgultimas['src']
+				aux = imgultimas['data-src']
 			else:
 				aux = ''
 
